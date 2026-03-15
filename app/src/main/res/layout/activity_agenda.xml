@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/gris_fondo">
+
+    <!-- ========== BARRA SUPERIOR ========== -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:background="@color/rojo_umb"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        <Button
+            android:id="@+id/btnVolver"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:text="@string/btn_volver"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/rojo_oscuro"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            app:cornerRadius="8dp"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/titulo_agenda"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:gravity="center"
+            android:layout_marginEnd="80dp"/>
+    </LinearLayout>
+
+    <!-- ========== SCROLL PRINCIPAL ========== -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="12dp"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- ===== TARJETA: FORMULARIO NUEVO EVENTO ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="18dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="12dp">
+
+                <!-- ImageView: icono del formulario (elemento requerido) -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="14dp">
+
+                    <ImageView
+                        android:id="@+id/imgIconoEvento"
+                        android:layout_width="52dp"
+                        android:layout_height="52dp"
+                        android:src="@mipmap/ic_launcher_round"
+                        android:layout_marginEnd="14dp"
+                        android:contentDescription="Icono evento"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="NUEVO EVENTO"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/rojo_umb"/>
+                </LinearLayout>
+
+                <!-- Campo: Fecha -->
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_fecha"
+                    android:textSize="13sp" android:textColor="@color/gris_oscuro"
+                    android:layout_marginBottom="4dp"/>
+                <EditText
+                    android:id="@+id/editFecha"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_fecha"
+                    android:inputType="text"
+                    android:padding="13dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@android:drawable/editbox_background"/>
+
+                <!-- Campo: Asunto -->
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_asunto"
+                    android:textSize="13sp" android:textColor="@color/gris_oscuro"
+                    android:layout_marginBottom="4dp"/>
+                <EditText
+                    android:id="@+id/editAsunto"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_asunto"
+                    android:inputType="text"
+                    android:padding="13dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@android:drawable/editbox_background"/>
+
+                <!-- Campo: Actividad -->
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_actividad"
+                    android:textSize="13sp" android:textColor="@color/gris_oscuro"
+                    android:layout_marginBottom="4dp"/>
+                <EditText
+                    android:id="@+id/editActividad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/hint_actividad"
+                    android:inputType="textMultiLine"
+                    android:minLines="2"
+                    android:gravity="top|left"
+                    android:padding="13dp"
+                    android:layout_marginBottom="12dp"
+                    android:background="@android:drawable/editbox_background"/>
+
+                <!-- ===== SPINNER: Categoria (elemento requerido) ===== -->
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_categoria"
+                    android:textSize="13sp" android:textColor="@color/gris_oscuro"
+                    android:layout_marginBottom="4dp"/>
+                <Spinner
+                    android:id="@+id/spinnerCategoria"
+                    android:layout_width="match_parent"
+                    android:layout_height="52dp"
+                    android:entries="@array/categorias"
+                    android:background="@android:drawable/editbox_background"
+                    android:padding="10dp"
+                    android:layout_marginBottom="12dp"/>
+
+                <!-- ===== RADIOGROUP: Prioridad (elemento requerido) ===== -->
+                <TextView android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_prioridad"
+                    android:textSize="13sp" android:textColor="@color/gris_oscuro"
+                    android:layout_marginBottom="6dp"/>
+                <RadioGroup
+                    android:id="@+id/radioGroupPrioridad"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="12dp">
+
+                    <RadioButton android:id="@+id/radioAlta"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Alta" android:textSize="14sp"
+                        android:layout_marginEnd="16dp"
+                        android:buttonTint="@color/rojo_umb"/>
+
+                    <RadioButton android:id="@+id/radioMedia"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Media" android:textSize="14sp"
+                        android:checked="true"
+                        android:layout_marginEnd="16dp"
+                        android:buttonTint="@color/amarillo_alerta"/>
+
+                    <RadioButton android:id="@+id/radioBaja"
+                        android:layout_width="wrap_content" android:layout_height="wrap_content"
+                        android:text="Baja" android:textSize="14sp"
+                        android:buttonTint="@color/verde_ok"/>
+                </RadioGroup>
+
+                <!-- ===== CHECKBOX: Evento activo (elemento requerido) ===== -->
+                <CheckBox
+                    android:id="@+id/checkActivo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/lbl_activo"
+                    android:textSize="15sp"
+                    android:textColor="@color/gris_oscuro"
+                    android:checked="true"
+                    android:layout_marginBottom="18dp"
+                    android:buttonTint="@color/rojo_umb"/>
+
+                <!-- Botones Agregar y Limpiar -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/btnAgregar"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="2"
+                        android:text="@string/btn_agregar"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="@color/white"
+                        android:backgroundTint="@color/rojo_umb"
+                        android:layout_marginEnd="8dp"
+                        app:cornerRadius="12dp"/>
+
+                    <Button
+                        android:id="@+id/btnLimpiar"
+                        android:layout_width="0dp"
+                        android:layout_height="56dp"
+                        android:layout_weight="1"
+                        android:text="@string/btn_limpiar"
+                        android:textSize="14sp"
+                        android:textColor="@color/gris_oscuro"
+                        android:backgroundTint="#E0E0E0"
+                        app:cornerRadius="12dp"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- ===== TARJETA: CONSULTAR ===== -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:background="@color/white"
+                android:padding="18dp"
+                android:elevation="4dp"
+                android:layout_marginBottom="14dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="EVENTOS REGISTRADOS"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/rojo_umb"
+                    android:gravity="center"
+                    android:layout_marginBottom="12dp"/>
+
+                <Spinner
+                    android:id="@+id/spinnerFiltro"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:entries="@array/filtros"
+                    android:background="@android:drawable/editbox_background"
+                    android:padding="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="8dp"
+                    android:visibility="gone"/>
+
+                <Button
+                    android:id="@+id/btnConsultar"
+                    android:layout_width="match_parent"
+                    android:layout_height="56dp"
+                    android:text="@string/btn_consultar"
+                    android:textSize="15sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:backgroundTint="@color/gris_oscuro"
+                    android:layout_marginBottom="12dp"
+                    app:cornerRadius="12dp"/>
+
+                <TextView
+                    android:id="@+id/tvResultados"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text=""
+                    android:textSize="14sp"
+                    android:textColor="#333333"
+                    android:padding="12dp"
+                    android:background="@color/gris_fondo"
+                    android:lineSpacingExtra="4dp"
+                    android:fontFamily="monospace"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

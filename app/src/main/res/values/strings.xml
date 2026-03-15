@@ -1,0 +1,40 @@
+<resources>
+    <string name="app_name">AgendaUMB</string>
+    <string name="titulo_bienvenida">AGENDA UMB</string>
+    <string name="subtitulo">Universidad Manuela Beltran</string>
+    <string name="btn_ir_agenda">VER AGENDA DE EVENTOS</string>
+    <string name="btn_salir">SALIR</string>
+    <string name="titulo_agenda">AGENDA DE EVENTOS</string>
+    <string name="btn_volver">VOLVER</string>
+    <string name="btn_agregar">AGREGAR EVENTO</string>
+    <string name="btn_consultar">VER TODOS LOS EVENTOS</string>
+    <string name="btn_limpiar">LIMPIAR</string>
+    <string name="lbl_fecha">Fecha del evento</string>
+    <string name="lbl_asunto">Asunto</string>
+    <string name="lbl_actividad">Descripcion de la actividad</string>
+    <string name="lbl_categoria">Categoria</string>
+    <string name="lbl_prioridad">Prioridad</string>
+    <string name="lbl_activo">Evento activo (vigente)</string>
+    <string name="hint_fecha">Ej: 2025-06-20</string>
+    <string name="hint_asunto">Nombre del evento</string>
+    <string name="hint_actividad">Descripcion detallada...</string>
+    <!-- Array para el Spinner de categoria -->
+    <string-array name="categorias">
+        <item>Seleccione categoria</item>
+        <item>Academico</item>
+        <item>Proyecto</item>
+        <item>Deportivo</item>
+        <item>Cultural</item>
+        <item>Administrativo</item>
+        <item>General</item>
+    </string-array>
+    <!-- Opciones del Spinner de filtro -->
+    <string-array name="filtros">
+        <item>Todas</item>
+        <item>Academico</item>
+        <item>Proyecto</item>
+        <item>Deportivo</item>
+        <item>Cultural</item>
+        <item>General</item>
+    </string-array>
+</resources>

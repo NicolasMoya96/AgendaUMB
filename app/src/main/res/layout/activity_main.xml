@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center"
+    android:background="@color/rojo_umb"
+    android:padding="32dp">
+
+    <ImageView
+        android:id="@+id/imgLogoMain"
+        android:layout_width="110dp"
+        android:layout_height="110dp"
+        android:src="@mipmap/ic_launcher_round"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Logo AgendaUMB"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/titulo_bienvenida"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        android:layout_marginBottom="8dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/subtitulo"
+        android:textSize="16sp"
+        android:textColor="#FFCDD2"
+        android:gravity="center"
+        android:layout_marginBottom="60dp"/>
+
+    <Button
+        android:id="@+id/btnIrAgenda"
+        android:layout_width="280dp"
+        android:layout_height="60dp"
+        android:text="@string/btn_ir_agenda"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="@color/rojo_umb"
+        android:backgroundTint="@color/white"
+        android:layout_marginBottom="14dp"
+        app:cornerRadius="30dp"/>
+
+    <Button
+        android:id="@+id/btnSalirMain"
+        android:layout_width="280dp"
+        android:layout_height="50dp"
+        android:text="@string/btn_salir"
+        android:textSize="14sp"
+        android:textColor="#FFCDD2"
+        android:backgroundTint="#B71C1C"
+        app:cornerRadius="30dp"/>
+
+</LinearLayout>
